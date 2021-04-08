@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEI [
+<!ENTITY o-tilde "<choice><abbr>&#333;</abbr><expan>o<ex>n</ex></expan></choice>">
+<!ENTITY et-tironien "<choice><abbr>&#576;</abbr><expan>et</expan></choice>">
+<!ENTITY a-tilde-an "<choice><abbr>&#257;</abbr><expan>a<ex>n</ex></expan></choice>">
+<!ENTITY a-tilde-am "<choice><abbr>&#257;</abbr><expan>a<ex>m</ex></expan></choice>">
+<!ENTITY e-tilde-en "<choice><abbr>&#275;</abbr><expan>e<ex>n</ex></expan></choice>">
+<!ENTITY e-con "<choice><abbr>e&#42864;</abbr><expan>e<ex>s</ex></expan></choice>">
+<!ENTITY p-barre "<choice><abbr>&#42833;</abbr><expan>p<ex>ar</ex></expan></choice>">
+<!ENTITY mt-tilde "<choice><abbr>m&#772;t</abbr><expan>m<ex>en</ex>t</expan></choice>">
+<!ENTITY deux-romain "<choice><abbr>.&#8561;.</abbr><expan>deux</expan></choice>">
+<!ENTITY un-romain "<choice><abbr>.&#8560;.</abbr><expan>un</expan></choice>">
+<!ENTITY u-v "<choice><orig>u</orig><reg>v</reg></choice>">
+<!ENTITY a-à "<choice><orig>a</orig><reg>à </reg></choice>">
+<!ENTITY i-j "<choice><orig>i</orig><reg>j</reg></choice>">
+<!ENTITY i-ï "<choice><orig>i</orig><reg>ï</reg></choice>">
+]>
+<?xml-model href="out/AxelleLecroq_LeBestiaire_odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="out/AxelleLecroq_LeBestiaire_odd.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="main">Vie de saints</title>
+            <title type="subtitle">Recueil de textes</title>
+
+            <respStmt>
+               <resp>encodage a été réalisé dans le cadre du cours de XML TEI dispensé à l'École nationale des Chartes</resp>
+               <persName>
+                  <forename>Axelle </forename><surname>Lecroq</surname></persName>
+               <note>2021</note>
+            </respStmt>
+         </titleStmt>
+         <!-- Information sur la publication en ligne du document--> 
+         <publicationStmt>
+            <publisher>Bibliothèque nationale de France</publisher>
+            <date when-iso="2011-03-21">21 mars 2011</date>
+            <idno>http://archivesetmanuscrits.bnf.fr/ark:/12148/cc50522d</idno>
+            <availability status="free">
+               <licence target="domaine public"/>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <settlement>Bibliothèque nationale de France, Paris</settlement>
+                  <repository>Département des Manuscrits. Français 412</repository>
+                  <idno>ark:/12148/btv1b84259980</idno>
+               </msIdentifier>
+               <!-- Description de ce que contient le document -->
+               <msContents>
+                  <msItem>
+                     <rubric n="1" xml:lang="la">Calendrier, comprenant le "Compost"</rubric>
+                  </msItem>
+                  <msItem>
+                     <rubric n="2" xml:lang="fro">Légendes de saints</rubric>
+                  </msItem>
+                  <msItem>
+                     <rubric n="3" xml:lang="fro">"Li Bestiaires" ou "Arriere ban"</rubric>
+                     <author>
+                        <persName>Richard de Fournival</persName>
+                        <date type="birth" when-iso="10-10-1201">10 octobre 1201</date>
+                        <date type="death" when-iso="01-03-1260">1er mars 1260</date>
+                        <note source="https://fr.wikipedia.org/wiki/Richard_de_Fournival">Est un médecin, alchimiste, poète et érudit français.</note></author>
+                  </msItem>
+                  <msItem>
+                     <rubric n="4" xml:lang="fro">"La Response sous l'Arriere ban"</rubric>
+                     <author><persName>Richard de Fournival</persName>
+                        <date type="birth" when-iso="10-10-1201">10 octobre 1201</date>
+                        <date type="death" when-iso="01-03-1260">1er mars 1260</date>
+                        <note source="https://fr.wikipedia.org/wiki/Richard_de_Fournival">Est un médecin, alchimiste, poète et érudit français.</note></author>
+                  </msItem>
+               </msContents>
+               <!-- Description du document en lui-même -->
+               <physDesc>
+                  <objectDesc form="manuscrit">
+                     <supportDesc material="vellum">
+                        <support>Vélin</support>
+                     </supportDesc>
+                     <layoutDesc>
+                        <layout columns="2"><p>Présenté en deux colonnes</p></layout>
+                     </layoutDesc>
+                  </objectDesc>
+                  <decoDesc>
+                     <p>Miniatures et lettres ornées</p>
+                  </decoDesc>
+               </physDesc>
+               <!-- Information sur l'histoire du document --> 
+               <history>
+                  <origin><origDate when="1285">1285</origDate></origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <standOff>
+      <!--Liste des animaux mentionnés dans le Bestiaire--> 
+      <listNym type ="animal">
+         <nym xml:id="CASTOR">
+            <orth xml:lang="fro">chastor</orth>
+            <orth xml:lang="fr">castor</orth>
+            <def source="https://www.larousse.fr/dictionnaires/francais/castor/13668">Gros rongeur caractérisé par ses pattes
+               palmées, sa queue aplatie et sans poils, sa belle fourrure, ses glandes génitales dont on extrait le
+               castoréum.</def>
+         </nym>
+         <nym xml:id="HIRONDELLE">
+            <orth xml:lang="fro">aronde</orth>
+            <orth xml:lang="fr">hirondelle</orth>
+            <def source="https://www.larousse.fr/dictionnaires/francais/hirondelle/40028">Oiseau (hirundinidé) migrateur,
+               au plumage noir et blanc, à bec court et largement fendu, aux ailes longues et pointues, aux pattes courtes,
+               se nourrissant d'insectes capturés en plein vol, commun dans tout l'hémisphère boréal.</def>
+         </nym>
+         <nym xml:id="HIRONDEAU">
+            <orth xml:lang="fr">hirondeau</orth>
+            <def source="https://www.larousse.fr/dictionnaires/francais/hirondeau/40027#:~:text=Petit%20de%20l'hirondelle.">Le petit 
+               de l'hirondelle.</def>
+            <p>Dans le texte, les hirondeaux sont appelés "faons" ou "petis arondeaus".</p>
+         </nym>
+         <nym xml:id="LICORNE">
+            <orth xml:lang="fro">unicorne</orth>
+            <orth xml:lang="fr">licorne</orth>
+            <def source="https://www.larousse.fr/dictionnaires/francais/licorne/47053">Animal fabuleux ayant un corps 
+               de cheval, une tête de bouc, une longue corne au milieu du front et souvent des pieds fourchus.</def>
+         </nym>
+         <nym xml:id="LION">
+            <orth xml:lang="fro">lion</orth>
+            <orth xml:lang="fr">lion</orth>
+            <def source="https://www.larousse.fr/dictionnaires/francais/lion/47301">Grand mammifère félidé carnivore, au pelage
+               fauve orné d'une crinière chez le mâle, confiné aujourd'hui dans les savanes d'Afrique et dans une réserve au 
+               nord-ouest de l'Inde, après avoir vécu au Proche-Orient et en Europe.</def>
+         </nym>
+         <nym xml:id="LIONCEAU">
+            <orth xml:lang="fr">lionceau</orth>
+            <def source="https://www.larousse.fr/dictionnaires/francais/lionceau/47304">
+               Jeune lion.</def>
+            <p>Dans le texte, le lionceau est appelé faon. </p>
+         </nym>
+         <nym xml:id="PAON">
+            <orth xml:lang="fro">paon</orth>
+            <orth xml:lang="fr">paon</orth>
+            <def source="https://www.larousse.fr/dictionnaires/francais/paon/57727">Très grand oiseau (phasianidé) au 
+               plumage vivement coloré, haut sur pattes, caractérisé par la longue traîne de plumes ornementales que 
+               porte le mâle et avec laquelle il peut parader en faisant la roue.
+            </def>
+         </nym>
+         <nym xml:id="PELICAN">
+            <orth xml:lang="fro">pellican</orth>
+            <orth xml:lang="fr">pélican</orth>
+            <def source="https://www.larousse.fr/dictionnaires/francais/p%c3%a9lican/59080">Très grand oiseau blanc, piscivore, 
+               au corps massif, aux courtes pattes et au long bec pourvu d'une large poche utilisée pour capturer les proies sous l'eau. </def>
+         </nym>
+         <nym xml:id="POUSSIN">
+            <orth xml:lang="fro">poucin</orth>
+            <orth xml:lang="fr">poussin</orth>
+            <def source="https://www.larousse.fr/dictionnaires/francais/poussin/63188">Jeune oiseau de diverses espèces granivores.</def>
+            <p>Dans le texte, les petits du pélican sont appelés "poucin" ainsi que "faon".</p>
+         </nym>
+         <nym xml:id="VACHE">
+            <orth xml:lang="fro">uache</orth>
+            <orth xml:lang="fr">vache</orth>
+            <def source="https://www.larousse.fr/dictionnaires/francais/vache/80870">Femelle reproductrice de l'espèce 
+               bovine.</def>
+         </nym>
+      </listNym>
+      <!--Liste des personnages mythologiques mentionnés dans le Bestiaire--> 
+      <listPerson type="mythologie">
+         <person xml:id="ARGUS">
+            <persName>Argus</persName>
+            <note>Fils d'Arestor et de Mycène est un Géant ayant une centaine d'yeux. Il est missioné pour surveiller Io,
+               transformée en vache dans un mythe des Métamorphoses d'Ovide. Un argus est aussi une figure imaginaire 
+               représentant une tête humaine couverte d'une multitude d'yeux en héraldique.</note>
+            <!--Dans le texte, le mot argus fait certainement référence au deux : le Géant et la figure imaginaire. Comme le mythe
+               d'Ovide y est mis évoqué avec notamment Mercure, j'ai pris l'initiative de mettre en avant le Géant Argus, et
+            non la figure imaginaire qui, au sein d'un bestiaire a toute sa place. J'aurais en effet pu indexer les deux
+            c'est-à-dire Argus dans la listPerson, comme fait ci-dessus, et l'argus dans le nymList, mais j'avais de grandes
+            difficultés à déterminer au sein du texte quel mot désignait la figure imaginaire et quel autre mot désignait le
+            Géant. D'autre part, les miniatures représentent les animaux évoqués dans le bestiaire. Ainsi, pour le paon, un 
+            paon est représenté, de même pour le lion où l'animal est aussi représenté et ainsi de suite. Tandis que pour 
+            l'argus, c'est une vache accompagnée d'un homme (certainement le vachier)et d'une femme(la dame). L'argus n'est
+            pas représenté ou bien est-ce l'homme qui représente l'argus et non le vachier? L'argus est, en effet, une figure
+            représentant une tête humaine mais ici, l'homme possède bien que deux yeux et non une centaine.-->
+         </person>
+         <person xml:id="MERCURE">
+            <persName>Mercure</persName>
+            <note>Dieu du commerce, il devient également le dieu des voleurs, des voyages et le messager des autres dieux.</note>
+         </person>
+      </listPerson>
+      <!--Liste des mythes évoqués dans le texte au sein d'une listEvent.-->
+      <listEvent>
+         <event xml:id="MYTHE-ARGUS-MERCURE" source="Métamorphose d'Ovide">
+            <desc source="https://fr.wikipedia.org/wiki/M%C3%A9tamorphoses_(Ovide)">
+               Inachos, fleuve d'Argolide, est inconsolable de la disparition de sa fille Io. Celle-ci a
+               été séduite et déshonorée par Jupiter, puis transformée en génisse pour cacher l'infidélité
+               du dieu à son épouse Junon. Celle-ci se fait offrir la génisse et la fait garder par <persName ref="#ARGUS">
+                  Argus</persName> aux mille yeux. Jupiter, finalement envoie son fils
+               <persName ref="#MERCURE">Mercure</persName> pour endormir la vigilance d'
+               <persName ref="#ARGUS">Argus</persName>. Pour cela, <persName ref="#MERCURE">Mercure</persName> 
+               raconte la façon dont la naïde Syrinx s'est métamorphosée en roseau pour échapper à Pan.
+               <persName ref="#ARGUS">Argus</persName> s'assoupit et <persName ref="#MERCURE">Mercure</persName> 
+               lui tranche la tête. De ses cent yeux, Junon fait le plumage de son paon. Elle chasse ensuite Io
+               en Égypte où cette dernière retrouve sa forme première, suite aux prières de Jupiter à son épouse.
+            </desc>
+         </event>
+      </listEvent>
+   </standOff>
+   <facsimile>
+      <surface>
+         <graphic url='img/page-1.jpeg' width='1024px' height='1534px' />
+         <zone ulx="301" uly="605" lrx="512" lry="752" facs="#PAON"/>
+         <zone ulx="302" uly="923" lrx="527" lry="1082" facs="#LION" />
+         <zone ulx="662" uly="440" lrx="899" lry="599" facs="#VACHE"/>
+      </surface>
+      <surface>
+         <graphic url='img/page-2.jpeg' width='1024px' height='1529px' />
+         <zone ulx="101" uly="300" lrx="306" lry="459" facs="#HIRONDELLE" />
+         <zone ulx="96" uly="609" lrx="304" lry="764" facs="#HIRONDELLE" />
+         <zone ulx="95" uly="980" lrx="310" lry="1138" facs="#LION" />
+         <zone ulx="467" uly="385" lrx="648" lry="542" facs="#PELICAN" />
+         <zone ulx="476" uly="1015" lrx="692" lry="1159" facs="#CASTOR" /> 
+      </surface>
+      <surface>
+         <graphic url='img/page-3.jpeg' width='1024px' height='1534px' />
+      </surface>
+   </facsimile>
+   <text>
+      <body>
+         <div type="part" n="3">
+            <p>
+               <pb n="232" type="verso" facs="https://gallica.bnf.fr/ark:/12148/btv1b84259980/f474.item"/>
+               <cb n="1"/>
+               <lb n="1"/><hi rend="color(red)">Q</hi>ant la pro&u-v;eance
+               <lb n="2"/>tient si contre la &u-v;olente que li autre
+               <lb n="3"/>sens ne si tient mie tant quil soient
+               <lb n="4"/>deceu. qui ensi leust fait il neust gar
+               <lb n="5" break="no"/>de eut. <hi rend="color(red)">M</hi>ais qi na por&u-v;eance il est ausi
+               <lb n="6"/>empiriez. Come li <rs nymRef="#PAON">paons</rs> enlaidis de la
+               <lb n="7"/>keue perdre. <hi rend="color(red)">C</hi>ar la keue del <rs nymRef="#PAON">paon</rs> si
+               <lb n="8" break="no"/>senefie por&u-v;eance. Por ce que keue qi
+               <lb n="9"/>est derriere senefie ce qui est &a-à;&u-v;enir.
+               <lb n="10"/>&et-tironien; ce quele est pleine diols: si senefie
+               <lb n="11"/>le prendre garde de ce qi est &a-à;&u-v;enir.
+               <lb n="12"/><hi rend="color(red) case(caps)">P</hi>or ce di &i-j;ou que keue de <rs nymRef="#PAON">paon</rs> se
+               <lb n="13" break= "no"/>nefie por&u-v;eance. <hi rend="color(red)">C</hi>ar autre cho
+               <lb n="14" break="no"/>se napele on por&u-v;eance. Fors que pren
+               <lb n="15" break="no"/>dre garde
+               <lb n="16" />cou qi est
+               <lb n="17"/>&a-à;&u-v;enir. <hi rend="color(red)">E</hi>t
+               <lb n="18"/>la keuwe.
+               <lb n="19"/>senefie por 
+               <lb n="20" break="no"/>&u-v;eance. &et-tironien;
+               <lb n="21"/>por ce est
+               <lb n="22"/>confermez li <rs nymRef="#PAON">paons </rs> &a-à;la nature del <rs nymRef="#LION">li&o-tilde;</rs>.
+               <lb n="23"/><hi rend="color(blue) case(caps)">C</hi>ar il est ditel nature que son le
+               <lb n="24"/>chase &et-tironien; il li co&u-v;iegne fiur. Il tra
+               <lb n="25" break="no"/>ine sa keue &et-tironien; si cue&u-v;re les traces de
+               <lb n="26"/>ses piez por ce qe on ne le sace ou tuo
+               <lb n="27" break="no"/>&u-v;er. <hi rend="color(red)">A</hi>ussi fet li sages hom qui a por
+               <lb n="28" break="no"/>&u-v;eance. Qant il li co&u-v;ient faire aucu
+               <lb n="29" break="no"/>ne chose dont on le blasmeroit son le 
+               <lb n="30"/>sa&u-v;oit. il
+               <lb n="31"/>se por&u-v;oit
+               <lb n="32"/>si au fai
+               <lb n="33" break="no"/>re que on
+               <lb n="34"/>ne le saura
+               <lb n="35"/>&i-j;a. si que la por&u-v;e&a-tilde-an;
+               <lb n="36" break="no"/>ce cue&u-v;re la trace de les piez. <hi rend="color(red)">C</hi>est a
+               <lb n="37"/>dire la renomee u bone u male qui
+               <lb n="38"/>de ses oe&u-v;res puissent issir. <hi rend="color(red)">D</hi>ont se
+               <lb n="39" break="no"/>nefie la keue por&u-v;eance &et-tironien; n&o-tilde;mee&mt-tilde;
+               
+               <cb n="2"/>
+               <lb n="40"/>keue de <rs nymRef="#PAON"><hi rend="color(orange) case(caps)">P</hi>aon</rs>. por les iols 
+               <hi rend="color(orange) case(caps)">Q</hi>ui i &i-j;ont.
+               <lb n="41"/><hi rend="color(red)">E</hi>t por ce di iou que aussi laide chose con
+               <lb n="42"/>cou est de <rs nymRef="#PAON">paon</rs> sanz keue. Aussi granz
+               <lb n="43"/>po&u-v;ertez est ce dome sans por&u-v;eance. <hi rend="color(red)">N</hi>&o-tilde;
+               <lb n="44"/>por qant se &i-j;ou eusse autre tant diols
+               <lb n="45"/>come li paons a en la keue. Si peusse &i-j;e
+               <lb n="46"/>bien estre endormis a force de &u-v;oiz.
+               <lb n="47"/><hi rend="color(blue) case(caps)">C</hi>ar &i-j;on ai o&i-ï; conter dune dame
+               <lb n="48"/>qi a&u-v;oit une trop bele <rs nymRef="#VACHE">&u-v;ache</rs>.
+               <lb n="49"/>que ele amoit tant que ele ne le &u-v;ol
+               <lb n="50" break="no"/>sist a&u-v;oir perdue por nule riens. Si le
+               <lb n="51"/>dona &a-à;garder &a-à;un &u-v;achier qui a&u-v;oir 
+               <lb n="52"/>anon <persName ref="#ARGUS">argus</persName>. <hi rend="color(red)">C</hi>il <persName ref="#ARGUS">argus</persName> a&u-v;oit cent iols.
+               <lb n="53"/>si ne dormo
+               <lb n="54" break="no"/>it onqes
+               <lb n="55"/>que de &deux-romain;
+               <lb n="56"/>iols ens&a-tilde-am;
+               <lb n="57" break="no"/>ble. si re
+               <lb n="58" break="no"/>posoit ades
+               <lb n="59" />les iols.
+               <lb n="60"/>deus et deus et tout li autre guaitoi&e-tilde-en;t
+               <lb n="61"/>&et-tironien; parmi tout ce fu la <rs nymRef="#VACHE">&u-v;ache</rs> . <rs ref="#MYTHE-ARGUS-MERCURE">car
+                  <lb n="62"/>uns hom qui la <rs nymRef="#VACHE">&u-v;ache</rs> a&u-v;oit amee
+                  <lb n="63"/>i enuoia un sien fil qi merveilles sa
+                  <lb n="64" break="no"/>&u-v;oit bien chanter en une longe &u-v;er
+                  <lb n="65" break="no"/>ge crousee. qi a&u-v;oit anon <persName ref="#MERCURE">mercurius</persName>.
+                  <lb n="66"/>Cil <persName ref="#MERCURE">mercurius</persName> comenca &a-à;parler &a-à;<persName ref="#ARGUS">ar
+                     <lb n="67" break="no"/>guz</persName> dun &et-tironien; del &et-tironien; &a-à;chanter &a-à;la fois en
+                  <lb n="68"/>sa &u-v;erge. &et-tironien; tant li ala entour quen par
+                  <lb n="69" break="no"/>lant quen chantant que <persName ref="#ARGUS">arguz</persName> sen
+                  <lb n="70" break="no"/>dormi de &deux-romain; iols et puis de &deux-romain; &et-tironien; tant
+                  <lb n="71"/>sendormi de ses deux iols. deus et deus
+                  <lb n="72"/>qe il sendormi de toz. &et-tironien; lors li trencha
+                  <lb n="73"/><persName ref="#MERCURE">mercurius</persName> la teste &et-tironien; enmena la <rs nymRef="#VACHE">&u-v;ache</rs>
+                  <lb n="74"/>&a-à;son pere. </rs> 
+               <lb n="75"/><hi rend="color(red) case(caps)">P</hi>or ce di &i-j;ou qe <rs nymRef="#ARGUS">arguz </rs> &a-à;force de
+               <lb n="76"/>&u-v;oiz sendormi. &i-j;a fust ce quil
+               <lb n="77"/>eust autretant diols. come il a en la
+               <lb n="78"/>keue dou <rs nymRef="#PAON">paon</rs> qui senefie por&u-v;e&a-tilde-an;ce.
+               <lb n="79"/>dont nest ce pas merveille se &i-j;e &p-barre;mi
+               <lb n="80"/>toute ma por&u-v;eance mendormi &a-à;for
+               <lb n="81" break="no"/>ce de &u-v;oiz. nient plus qe de celui qi
+               <lb n="82"/>sendormi &a-à; la seraine &et-tironien; del <rs nymRef="#LICORNE">unicorne</rs>
+               <lb n="83"/>qi sendor a pucele &et-tironien; cis meismes d<persName ref="#ARGUS">ar
+               <lb n="84" break="no"/>guz</persName>. <hi rend="color(red)">D</hi>ont sui &i-j;e morz cest &u-v;oirs i a il
+               <lb n="85"/>point de reco&u-v;rier ne sai. mes quel
+               
+               <pb n= "233" type="recto" facs="https://gallica.bnf.fr/ark:/12148/btv1b84259980/f475.item"/>
+               <cb n="1"/>
+               <lb n="86"/>recourier <hi rend="color(orange) case(caps)">&et-tironien;</hi> puet il a&u-v;oir. <hi rend="color(orange) case(caps)">L</hi>a &u-v;erites
+               <lb n="87"/>si est qe aucun recourier i puet il a&u-v;oir
+               <lb n="88"/><hi rend="color(red)">M</hi>ais le ne sai quels li reco&u-v;riers i est.
+               <lb n="89"/>nient plus qe de l<rs nymRef="#HIRONDELLE">aronde</rs>. 
+               <lb n="90"/><hi rend="color(blue) case(caps)">C</hi>ar on a espro&u-v;e qe qant on li a
+               <lb n="91"/>emblez ses <rs nymRef="#HIRONDEAU">petis arondeaus</rs> : son
+               <lb n="92"/>lor crie&u-v;e les iols &et-tironien; on les remet el nit
+               <lb n="93"/>&i-j;a por ce ne
+               <lb n="94"/>demorra qil
+               <lb n="95"/>ne &u-v;oient
+               <lb n="96"/>ains quil
+               <lb n="97"/>soient par
+               <lb n="98" break="no"/>creu &et-tironien; pense
+               <lb n="99"/>on bien qe
+               <lb n="100"/>l<rs nymRef="#HIRONDELLE">aronde</rs> les garist. <hi rend="color(red)">M</hi>ais on ne seit par
+               <lb n="101"/>quel medecine.
+               <lb n="102"/><hi rend="color(red) case(caps)">E</hi>ntel maniere a&u-v;ient de la mos
+               <lb n="103" break="no"/>toile qe son le ocit les <rs nymRef="#HIRONDEAU">faons</rs> &et-tironien; 
+               <lb n="104"/>on li rent toz morz. Ele seit de sa na
+               <lb n="105" break="no"/>ture une medecine par coi ele les re
+               <lb n="106" break="no"/>suscite. ce seit on tout de &u-v;oir. <hi rend="color(red)">M</hi>ais
+               <lb n="107"/>on ne puet
+               <lb n="108"/>sa&u-v;oir quel
+               <lb n="109"/>la medecine
+               <lb n="110"/>est. Ensi di
+               <lb n="111"/>&i-j;ou bele tres
+               <lb n="112"/>doce amee
+               <lb n="113"/>qe &i-j;e cuic qe
+               <lb n="114"/>aucune medecine est par qoi &u-v;os me
+               <lb n="115"/>poes bien resusciter. fors qe tant que
+               <lb n="116"/>par la nature dune beste iuge on la na
+               <lb n="117" break="no"/>ture dune autre. <hi rend="color(red)">E</hi>t on seit bien que 
+               <lb n="118"/>li <rs nymRef="#LION">lions</rs> resuscite ses <rs nymRef="#LIONCEAU">faons</rs> &et-tironien; si sait on
+               <lb n="119"/>bien coment
+               <lb n="120"/><hi rend="color(blue) case(caps)">C</hi>ar li <rs nymRef="#LION">lions</rs> nest mors &et-tironien; trois iorz
+               <lb n="121"/>ruit li <rs nymRef="#LION">peres</rs> for <rs nymRef="#LIONCEAU">lui</rs>. Et ensi resus
+               <lb n="122" break="no"/>cite. <hi rend="color(red)"><choice><orig>E</orig><reg>A</reg></choice></hi>insi me samble il qe se &u-v;os me 
+               <lb n="123"/>&u-v;olies rapeler a &u-v;ostre amor qe ce me
+               <lb n="124"/>porroit bien
+               <lb n="125"/>estre reco&u-v;r
+               <lb n="126" break="no"/>iers a resus
+               <lb n="127" break="no"/>citer. de teil
+               <lb n="128"/>mort come 
+               <lb n="129"/>il est li morz
+               <lb n="130"/>damors. Et 
+               <lb n="131"/>tout aussi come il a&u-v;ient dou <rs nymRef="#PELICAN">pellican</rs>.
+               
+               <cb n="2"/>
+               <lb n="132"/><hi rend="color(red) case(caps)">C</hi>ar on <hi rend="color(orange) case(caps)">s</hi>eit bien qe li 
+               <rs nymRef="#PELICAN">pellicans</rs> <hi rend="color(orange) case(caps)"> E</hi>st
+               <lb n="133"/>uns oiseaus qui merueilles ai
+               <lb n="134" break="no"/>mes ses <rs nymRef="#POUSSIN">faons</rs>. <hi rend="color(red)">E</hi>t tant les aime qui se
+               <lb n="135"/>&i-j;ue trop &u-v;olentiers a aus: si si en fient
+               <lb n="136"/>tant quil i osent aussi &i-j;uer &et-tironien; tant li &u-v;o
+               <lb n="137" break="no"/>lent de&u-v;ant les iols qil le fierent de
+               <lb n="138"/>lor eles es iols. &et-tironien; il est de li orguilleuse
+               <lb n="139"/>maniere quil ne puet soffrir con li mef
+               <lb n="140" break="no"/>face. si sen corroce &et-tironien; les ocit. Et qant il
+               <lb n="141"/>les a ocis si sen repent. <hi rend="color(red)">L</hi>ors lie&u-v;e sele &et-tironien;
+               <lb n="142"/>oe&u-v;re son coste a son be<choice><orig>ch</orig><reg>c</reg></choice> &et-tironien; del sanc qil
+               <lb n="143"/>en trait si arose
+               <lb n="144"/>ses <rs nymRef="#POUSSIN">poucins</rs> &et-tironien; ensi
+               <lb n="145"/>les resuscite. <hi rend="color(red)">E</hi>n
+               <lb n="146" break="no"/>si bele tres douce
+               <lb n="147"/>amee me fu il
+               <lb n="148"/>quant &i-j;e fui nou
+               <lb n="149" break="no"/>&u-v;eaus acointes
+               <lb n="150"/>de &u-v;ous adont me fis &i-j;e &u-v;ostre <rs nymRef="#POUSSIN">poucin</rs>
+               <lb n="151"/>&et-tironien; &u-v;os me feistes si bel samblant qe il me fu
+               <lb n="152"/>a&u-v;is que &i-j;e oseroie bien parler a &u-v;ous de
+               <lb n="153"/>ce quil plus me de&u-v;eroit plaire. &et-tironien; &u-v;ous
+               <lb n="154"/>me prisastes si peu en&u-v;ers &u-v;ous que
+               <lb n="155"/>ce que &i-j;e &u-v;os dis ne &u-v;ous pleut mie.
+               <lb n="156"/>si men a&u-v;ez ocis de teil mort com a amor
+               <lb n="157"/>apertient. Mes see &u-v;os &u-v;olies &u-v;ostre co
+               <lb n="158" break="no"/>ste o&u-v;rir. tant qe &u-v;os meuscies arose
+               <lb n="159"/>de &u-v;ostre bone &u-v;olente. &et-tironien; si meuscies
+               <lb n="160"/>&u-v;o cuer done. &u-v;ous ma&u-v;eries resuscite.
+               <lb n="161"/><hi rend="color(red)">C</hi>ar ce est la so&u-v;eraine medecine de moi
+               <lb n="162"/>aidier de &u-v;ostre cuer a&u-v;oir. <hi rend="color(red)">E</hi>t se ne
+               <lb n="163"/>fuft ore se por ce non que &i-j;e &u-v;os ai o&i-ï;
+               <lb n="164"/>aucune foiz dire. qe il nos anoioit de
+               <lb n="165"/>ce qe &i-j;e &u-v;os prooit. et que &u-v;olentiers me 
+               <lb n="166"/>tenissies compaignie se ce ne fust. si me
+               <lb n="167"/>deuissiez &u-v;os &u-v;ostre cuer doner por estre
+               <lb n="168"/>deliure de mon anni.
+               <lb n="169"/><hi rend="color(blue) case(caps)">A</hi>ussi com le <rs nymRef="#CASTOR">chastors</rs>. cest une beste
+               <lb n="170"/>qui a &un-romain; membre sor lui qi porte 
+               <lb n="171"/>miedecine: si le chace on por celui mem
+               <lb n="172" break="no"/>bre a a&u-v;oir
+               <lb n="173"/>&et-tironien; il fuit
+               <lb n="174"/>tant com
+               <lb n="175"/>il puet. <hi rend="color(red)">M</hi>&e-con;
+               <lb n="176"/>qant il &u-v;o
+               <lb n="177" break="no"/>it quil ne
+               
+               <pb n="233" type="verso" facs="https://gallica.bnf.fr/ark:/12148/btv1b84259980/f476.item"/>
+               <cb n="1"/>
+               <lb n="178"/>puet <hi rend="color(red) case(caps)">P</hi>lus guencir si a paor <hi rend="color(red) case(caps)">Q</hi>on ne lo
+               <lb n="179" break="no"/>cie. <hi rend="color(red)">E</hi>t non por qant il a tant de sens de
+               <lb n="180"/>nature quil seit bien con ne le chace se por
+               <lb n="181"/>celui membre non. Si i gete ses dens si les
+               <lb n="182" break="no"/>rache &et-tironien; si le lait cheir enmi la uoie. <hi rend="color(red)">E</hi>t
+               <lb n="183"/>qant on le trueue si le lait on aler. car
+               <lb n="184"/>on ne le chase se por celui membre non.
+            </p>
+         </div>
+      </body>
+   </text>
+</TEI>
+
