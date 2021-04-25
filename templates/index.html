@@ -1,6 +1,6 @@
 <html xmlns="http://www.tei-c.org/ns/1.0">
    <style>
-                    h4{
+                    h5{
                     margin-bottom: 0.5rem;
                     font-weight: 500;
                     line-height: 1.2;
@@ -8,9 +8,15 @@
                     font-weight: 700;
                     font-size: x-large;
                     }
+                    .btn-margin{
+                    margin: 10px;
+                    }
                 </style>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <meta name="author" content="Axelle Lecroq"></meta>
+      <meta name="description" content="Édition numérique de la Vie de saints de Richard de Fournival"></meta>
+      <meta name="keywords" content="XSLT,XML,TEI"></meta>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
       <title>Vie de saints de Richard de Fournival</title>
    </head>
@@ -19,9 +25,19 @@
             color: #BDA164 ;
             margin-right: 15px;
             }
+           .titre-site{
+           margin: 10px 25px 5px 25px;
+           color: #5e7bb1;
+           font-size: 20px;
+           font-variant: small-caps;
+           }
+           .nav-style{
+           background-color: #F2E5C9;
+           margin-bottom: 50px;
+           }
         </style>
-   <nav class="navbar navbar-expand-lg" role="navigation" style="background-color: #F2E5C9; margin-bottom: 50px;">
-      <div class="navbar-brand" style="margin: 10px 25px 5px 25px;                 color: #5e7bb1;                 font-family: ui-serif;                 font-size: 30px;                 font-variant: small-caps;">Vie de saints de Richard de Fournival</div>
+   <nav class="navbar navbar-expand-lg nav-style" role="navigation">
+      <div class="navbar-brand titre-site">Vie de saints de Richard de Fournival</div>
       <div class="container-fluid">
          <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="navlinks" href="notice.html">Notice</a></li>
@@ -30,9 +46,15 @@
          </ul>
       </div>
    </nav>
-   <div class="container"><button type="button" class="btn btn-light" style="margin: 10px;"><a href="index.html" style="color: black;">Animaux</a></button><button type="button" class="btn btn-light" style="margin: 10px;"><a href="index-personnages.html" style="color: black;">Personnages</a></button><button type="button" class="btn btn-light" style="margin: 10px;"><a href="index-event.html" style="color: black;">Mythes</a></button><div class="tab-content" id="myTabContent">
+   <div class="container"><button class="btn btn-light btn-margin"><a href="index.html" style="color: #BDA164;">Animaux</a></button><button class="btn btn-light btn-margin"><a href="index-personnages.html" style="color: #DBCFB6">Personnages</a></button><button class="btn btn-light btn-margin"><a href="index-event.html" style="color: #DBCFB6">Mythes</a></button><div class="tab-content" id="myTabContent">
+         <style>
+            .liste-titre{
+            font-variant: small-caps;
+            font-weight: 400;
+            }
+        </style>
          <div style="margin-left: 100px;">
-            <h4 class="h4" style="                 font-variant: small-caps;                 font-family: Georgia;">Liste des animaux</h4>
+            <h5 class="h5 liste-titre">Liste des animaux</h5>
             <div style="margin-left:50px">
                <p><b>castor</b><i> · chastor</i></p>
                <div style="margin: 0px 450px 15px 50px">
@@ -121,7 +143,7 @@
    <footer>
       <hr class="style-one"></hr>
       <div class="container">
-         <div class="row text-center justify-content-center ">
+         <div class="row text-center justify-content-center">
             <div>
                <h6><a class="navlinks" href="apropos.html">À propos</a></h6>
             </div>

@@ -39,7 +39,7 @@
         <xsl:result-document href="{$path-notice}" method="html" indent="yes">
             <html>
                 <style>
-                    h4{
+                    h5{
                     margin-bottom: 0.5rem;
                     font-weight: 500;
                     line-height: 1.2;
@@ -57,11 +57,6 @@
         
         <xsl:result-document href="{$path-transcriptions}" method="html" indent="yes">
             <html>
-                <style>
-                    .transcription {
-                    font-family: Georgia, serif;
-                    }
-                </style>
                 <xsl:copy-of select="$head"/>
                 <xsl:call-template name="barreNavigation"/>
                 <xsl:call-template name="transcriptions"/>
@@ -73,7 +68,7 @@
         <xsl:result-document href="{$path-index}" method="html" indent="yes">
             <html>
                 <style>
-                    h4{
+                    h5{
                     margin-bottom: 0.5rem;
                     font-weight: 500;
                     line-height: 1.2;
@@ -81,19 +76,22 @@
                     font-weight: 700;
                     font-size: x-large;
                     }
+                    .btn-margin{
+                    margin: 10px;
+                    }
                 </style>
                 <xsl:copy-of select="$head"/>
                 <xsl:call-template name="barreNavigation"/>
                 
                 <div class="container">
-                    <button type="button" class="btn btn-light" style="margin: 10px;">
-                        <a href="{$path-index}" style="color: black;">Animaux</a>
+                    <button class="btn btn-light btn-margin" >
+                        <a href="{$path-index}" style="color: #BDA164;">Animaux</a>
                     </button>
-                    <button type="button" class="btn btn-light" style="margin: 10px;">
-                        <a href="{$path-index-personnages}" style="color: black;">Personnages</a>
+                    <button class="btn btn-light btn-margin">
+                        <a href="{$path-index-personnages}" style="color: #DBCFB6">Personnages</a>
                     </button>
-                    <button type="button" class="btn btn-light" style="margin: 10px;">
-                        <a href="{$path-index-event}" style="color: black;">Mythes</a>
+                    <button class="btn btn-light btn-margin">
+                        <a href="{$path-index-event}" style="color: #DBCFB6">Mythes</a>
                     </button>
                       
                     <div class="tab-content" id="myTabContent">
@@ -107,7 +105,7 @@
         <xsl:result-document href="{$path-index-personnages}" method="html" indent="yes">
             <html>
                 <style>
-                    h4{
+                    h5{
                     margin-bottom: 0.5rem;
                     font-weight: 500;
                     line-height: 1.2;
@@ -120,14 +118,14 @@
                 <xsl:call-template name="barreNavigation"/>
                 
                 <div class="container">
-                    <button type="button" class="btn btn-light" style="margin: 10px;">
-                        <a href="{$path-index}" style="color: black;">Animaux</a>
+                    <button class="btn btn-light" style="margin: 10px;">
+                        <a href="{$path-index}" style="color:#DBCFB6;">Animaux</a>
                     </button>
-                    <button type="button" class="btn btn-light" style="margin: 10px;">
-                        <a href="{$path-index-personnages}" style="color: black;">Personnages</a>
+                    <button class="btn btn-light" style="margin: 10px;">
+                        <a href="{$path-index-personnages}" style="color: #BDA164;">Personnages</a>
                     </button>
-                    <button type="button" class="btn btn-light" style="margin: 10px;">
-                        <a href="{$path-index-event}" style="color: black;">Mythes</a>
+                    <button class="btn btn-light" style="margin: 10px;">
+                        <a href="{$path-index-event}" style="color: #DBCFB6;">Mythes</a>
                     </button>
                     
                     <div class="tab-content" id="myTabContent">
@@ -141,7 +139,7 @@
         <xsl:result-document href="{$path-index-event}" method="html" indent="yes">
             <html>
                 <style>
-                    h4{
+                    h5{
                     margin-bottom: 0.5rem;
                     font-weight: 500;
                     line-height: 1.2;
@@ -154,14 +152,14 @@
                 <xsl:call-template name="barreNavigation"/>
                 
                 <div class="container">
-                    <button type="button" class="btn btn-light" style="margin: 10px;">
-                        <a href="{$path-index}" style="color: black;">Animaux</a>
+                    <button class="btn btn-light" style="margin: 10px;">
+                        <a href="{$path-index}" style="color: #DBCFB6;">Animaux</a>
                     </button>
-                    <button type="button" class="btn btn-light" style="margin: 10px;">
-                        <a href="{$path-index-personnages}" style="color: black;">Personnages</a>
+                    <button class="btn btn-light" style="margin: 10px;">
+                        <a href="{$path-index-personnages}" style="color: #DBCFB6;">Personnages</a>
                     </button>
-                    <button type="button" class="btn btn-light" style="margin: 10px;">
-                        <a href="{$path-index-event}" style="color: black;">Mythes</a>
+                    <button class="btn btn-light" style="margin: 10px;">
+                        <a href="{$path-index-event}" style="color: #BDA164;">Mythes</a>
                     </button>
                     
                     <div class="tab-content" id="myTabContent">
@@ -175,7 +173,7 @@
         <xsl:result-document href="{$path-a-propos}" method="html" indent="yes">
             <html>
                 <style>
-                    h4{
+                    h5{
                     margin-bottom: 0.5rem;
                     font-weight: 500;
                     line-height: 1.2;
@@ -195,6 +193,9 @@
     <xsl:variable name="head">
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta name="author" content="Axelle Lecroq"/>
+            <meta name="description" content="Édition numérique de la {$titre}"/>
+            <meta name="keywords" content="XSLT,XML,TEI"/>
             <link rel="stylesheet"
                 href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
                 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -211,13 +212,19 @@
             color: #BDA164 ;
             margin-right: 15px;
             }
+           .titre-site{
+           margin: 10px 25px 5px 25px;
+           color: #5e7bb1;
+           font-size: 20px;
+           font-variant: small-caps;
+           }
+           .nav-style{
+           background-color: #F2E5C9;
+           margin-bottom: 50px;
+           }
         </style>
-        <nav class="navbar navbar-expand-lg" role="navigation" style="background-color: #F2E5C9; margin-bottom: 50px;">
-            <div class="navbar-brand" style="margin: 10px 25px 5px 25px;
-                color: #5e7bb1;
-                font-family: ui-serif;
-                font-size: 30px;
-                font-variant: small-caps;">
+        <nav class="navbar navbar-expand-lg nav-style" role="navigation">
+            <div class="navbar-brand titre-site">
                 <xsl:value-of select="$titre"/>
             </div>
             <div class="container-fluid">
@@ -241,7 +248,7 @@
         <footer>
             <hr class="style-one" />
             <div class="container">
-                <div class="row text-center justify-content-center ">
+                <div class="row text-center justify-content-center">
                     <div>
                         <h6>
                             <a class="navlinks" href="{$path-a-propos}">À propos</a>
@@ -260,14 +267,22 @@
             Les informations sur le manuscrit 
             avec les données récupérés du teiHeader
         -->
+        <style>
+            .about{
+            font-variant: small-caps;
+            font-weight: 400;
+            }
+            .about-item{
+            padding-left:10px;
+            padding-right:10px
+            }
+        </style>
         <div style="margin-left: 100px;
             margin-right: 200px;">
-            
-            <h4 style="font-variant-caps: petite-caps;
-                font-family: Georgia">À propos du manuscrit</h4>
+            <h5 class="about">Le manuscrit</h5>
         <table>
             <tr>
-                <td style="padding-left:10px; padding-right:10px">Contient</td>
+                <td class="about-item">Contient</td>
                 <td><xsl:for-each select="//msItem">
                     <xsl:number count="msItem" level="any" format=" 1° "/>
                     <xsl:value-of select="rubric/text()"/>
@@ -275,13 +290,13 @@
                 </xsl:for-each></td>
             </tr>
             <tr>
-                <td style="padding-left:10px; padding-right:10px">Date d'origine</td>
+                <td class="about-item">Date d'origine</td>
                 <td>
                     <xsl:value-of select="//history"/>
                 </td>
             </tr>
             <tr>
-                <td style="padding-left:10px; padding-right:10px">Format</td>
+                <td class="about-item">Format</td>
                 <td>
                     <xsl:value-of select="//physDesc//support"/>
                     <xsl:text> - </xsl:text>
@@ -289,25 +304,25 @@
                 </td>
             </tr>
             <tr>
-                <td style="padding-left:10px; padding-right:10px">Identifiant</td>
+                <td class="about-item">Identifiant</td>
                 <td>
                     <xsl:value-of select="//msDesc//idno"/>
                 </td>
             </tr>
             <tr>
-                <td style="padding-left:10px; padding-right:10px">Source</td>
+                <td class="about-item">Source</td>
                 <td>
                     <xsl:value-of select="//msDesc//repository"/>
                 </td>
             </tr>
             <tr>
-                <td style="padding-left:10px; padding-right:10px">Provenance</td>
+                <td class="about-item">Provenance</td>
                 <td>
                     <xsl:value-of select="//msDesc//settlement"/>
                 </td>
             </tr>
             <tr>
-                <td style="padding-left:10px; padding-right:10px">Droits</td>
+                <td class="about-item">Droits</td>
                 <td>
                    <a target="_blank">
                        <xsl:attribute name="href">
@@ -323,24 +338,23 @@
             Les informations sur l'auteur 
             avec les données récupérés du teiHeader
         -->
-            <h4 style="font-variant-caps: petite-caps;
-                font-family: Georgia">Au sujet de l'auteur : <xsl:value-of select="//msItem[3]//persName"/></h4>
+            <h5 class="about">L'auteur : <xsl:value-of select="//msItem[3]//persName"/></h5>
             <table>
                 <tr>
-                    <td style="padding-left:10px; padding-right:10px">Naissance</td>
+                    <td class="about-item">Naissance</td>
                     <td>
                         <xsl:value-of select="//msItem[3]//date[1]"/>
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding-left:10px; padding-right:10px">
+                    <td class="about-item">
                     Décès</td>
                     <td>
                         <xsl:value-of select="//msItem[3]//date[2]"/>
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding-left:10px; padding-right:10px">Status</td>
+                    <td class="about-item">Status</td>
                     <td>
                         <xsl:value-of select="//msItem[3]//note"/>
                     </td>
@@ -380,31 +394,35 @@
             qui comprendra la transcription originale et la transcription
             normalisée.
         -->
-        <table style="margin-left: auto;
-            margin-right: auto;">
-         <tr>
-        <td class="column">
-            <div type="orig" style="padding-right: 100px">
-                <h2 style="color:#5e7bb1;
-                    font-size: inherit;
-                    font-variant: small-caps;
-                    margin-bottom: 0px;
-                    font-family:Georgia">Transcription facsimilaire</h2>
-            <xsl:apply-templates select ="//body" mode="orig"/>
-            </div>
-        </td>
-        <td class="column">
-            <div type="reg">
-                <h2 style="color:#5e7bb1;
-                    font-size: inherit;
-                    font-variant: small-caps;
-                    margin-bottom: 0px;
-                    font-family:Georgia">Transcription normalisée</h2>
-                <xsl:apply-templates select ="//body" mode="reg"/>
-            </div>
-        </td>
-            </tr>
-        </table>        
+        <html>
+            <style>
+                .trans-titre {
+                color:#5e7bb1;
+                font-size: inherit;
+                font-variant: small-caps;
+                font-weight: 400;
+                margin-bottom: 0px;
+                text-align:center
+                }
+            </style>
+            <table style="margin-left: auto;
+                margin-right: auto;">
+                <tr>
+                    <td class="column">
+                        <div type="orig" style="padding-right: 100px">
+                            <h2 class="trans-titre">Transcription facsimilaire</h2>
+                            <xsl:apply-templates select ="//body" mode="orig"/>
+                        </div>
+                    </td>
+                    <td class="column">
+                        <div type="reg">
+                            <h2 class="trans-titre">Transcription normalisée</h2>
+                            <xsl:apply-templates select ="//body" mode="reg"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>  
+        </html>
     </xsl:template>
     
     <xsl:template match="choice" mode="orig">
@@ -481,10 +499,14 @@
     pour chacune d'entre elles est à adapter en fonction de l'index dans lequel
     on se trouve. -->
     <xsl:template name="index">
+        <style>
+            .liste-titre{
+            font-variant: small-caps;
+            font-weight: 400;
+            }
+        </style>
         <div style="margin-left: 100px;">
-            <h4 class="h4" style="
-                font-variant: small-caps;
-                font-family: Georgia;">Liste des animaux</h4>
+            <h5 class="h5 liste-titre">Liste des animaux</h5>
         <div style="margin-left:50px">
         <xsl:for-each select="//orth[@xml:lang='fr']">
             <!-- 1# Stockage de l'ixml:id dans une variable
@@ -536,10 +558,18 @@
     </xsl:template>
     
     <xsl:template name="index-personnages">
+        <style>
+            .liste-titre{
+            font-variant: small-caps;
+            font-weight: 400;
+            }
+            .identation{
+            margin-left:50px;
+            margin-right:450px
+            }
+        </style>
         <div style="margin-left: 100px;">
-            <h4 class="h4" style="
-                font-variant: small-caps;
-                font-family: Georgia;">Liste des personnages</h4>
+            <h5 class="h5 liste-titre">Liste des personnages</h5>
             <div style="margin-left:50px">
                 <xsl:for-each select="//listPerson/person">
                     <!-- 1# -->
@@ -550,10 +580,10 @@
                         <!-- 2# -->
                         <b><xsl:value-of select="persName"/></b>
                     </p>
-                    <p style="margin-left:50px; margin-right:450px">
+                    <p class="identation">
                         <!-- 3# -->
                         <xsl:value-of select="note"/>
-                        <p style="margin-left:50px; margin-right:450px">
+                        <p class="identation">
                             <!-- 4 # -->
                             <xsl:text>Occurences : </xsl:text>
                             <xsl:for-each select="ancestor::TEI//body//p/persName[@ref=concat('#', $idPerson)] | ancestor::TEI//body//p/rs/persName[@ref=concat('#', $idPerson)] ">
@@ -568,10 +598,18 @@
     </xsl:template>
     
     <xsl:template name="index-event">
+        <style>
+            .identation{
+            margin-left:50px;
+            margin-right:450px
+            }
+            .liste-titre{
+            font-variant: small-caps;
+            font-weight: 400;
+            }
+        </style>
         <div style="margin-left: 100px;">
-            <h4 class="h4" style="
-                font-variant: small-caps;
-                font-family: Georgia;">Liste des mythes</h4>
+            <h5 class="h5 liste-titre">Liste des mythes</h5>
             <div style="margin-left:50px">
                 <!-- 1# -->
                 <xsl:variable name="idEvent">
@@ -581,10 +619,10 @@
                     <!-- 2# -->
                     <b><xsl:value-of select="//listEvent/event/@source"/></b>
                 </p>
-                <p style="margin-left:50px; margin-right:450px">
+                <p class="identation">
                     <!-- 3# -->
                     <xsl:value-of select="//listEvent//desc"/>
-                    <p style="margin-left:50px; margin-right:450px">
+                    <p class="identation">
                         <!-- 4# -->
                         <xsl:text>Occurence : </xsl:text>
                         <xsl:for-each select="//body//rs[@ref=concat('#', $idEvent)]">

@@ -1,6 +1,6 @@
 <html xmlns="http://www.tei-c.org/ns/1.0">
    <style>
-                    h4{
+                    h5{
                     margin-bottom: 0.5rem;
                     font-weight: 500;
                     line-height: 1.2;
@@ -11,6 +11,9 @@
                 </style>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <meta name="author" content="Axelle Lecroq"></meta>
+      <meta name="description" content="Édition numérique de la Vie de saints de Richard de Fournival"></meta>
+      <meta name="keywords" content="XSLT,XML,TEI"></meta>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
       <title>Vie de saints de Richard de Fournival</title>
    </head>
@@ -19,9 +22,19 @@
             color: #BDA164 ;
             margin-right: 15px;
             }
+           .titre-site{
+           margin: 10px 25px 5px 25px;
+           color: #5e7bb1;
+           font-size: 20px;
+           font-variant: small-caps;
+           }
+           .nav-style{
+           background-color: #F2E5C9;
+           margin-bottom: 50px;
+           }
         </style>
-   <nav class="navbar navbar-expand-lg" role="navigation" style="background-color: #F2E5C9; margin-bottom: 50px;">
-      <div class="navbar-brand" style="margin: 10px 25px 5px 25px;                 color: #5e7bb1;                 font-family: ui-serif;                 font-size: 30px;                 font-variant: small-caps;">Vie de saints de Richard de Fournival</div>
+   <nav class="navbar navbar-expand-lg nav-style" role="navigation">
+      <div class="navbar-brand titre-site">Vie de saints de Richard de Fournival</div>
       <div class="container-fluid">
          <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="navlinks" href="notice.html">Notice</a></li>
@@ -30,56 +43,66 @@
          </ul>
       </div>
    </nav>
+   <style>
+            .about{
+            font-variant: small-caps;
+            font-weight: 400;
+            }
+            .about-item{
+            padding-left:10px;
+            padding-right:10px
+            }
+        </style>
    <div style="margin-left: 100px;             margin-right: 200px;">
-      <h4 style="font-variant-caps: petite-caps;                 font-family: Georgia">À propos du manuscrit</h4>
+      <h5 class="about">Le manuscrit</h5>
       <table>
          <tr>
-            <td style="padding-left:10px; padding-right:10px">Contient</td>
+            <td class="about-item">Contient</td>
             <td> 1° Calendrier, comprenant le "Compost" ;  2° Légendes de saints ;  3° "Li Bestiaires" ou "Arriere ban" ;  4° "La Response sous l'Arriere ban"</td>
          </tr>
          <tr>
-            <td style="padding-left:10px; padding-right:10px">Date d'origine</td>
+            <td class="about-item">Date d'origine</td>
             <td>1285</td>
          </tr>
          <tr>
-            <td style="padding-left:10px; padding-right:10px">Format</td>
+            <td class="about-item">Format</td>
             <td>Vélin - Miniatures et lettres ornées</td>
          </tr>
          <tr>
-            <td style="padding-left:10px; padding-right:10px">Identifiant</td>
+            <td class="about-item">Identifiant</td>
             <td>ark:/12148/btv1b84259980</td>
          </tr>
          <tr>
-            <td style="padding-left:10px; padding-right:10px">Source</td>
+            <td class="about-item">Source</td>
             <td>Département des Manuscrits. Français 412</td>
          </tr>
          <tr>
-            <td style="padding-left:10px; padding-right:10px">Provenance</td>
+            <td class="about-item">Provenance</td>
             <td>Bibliothèque nationale de France, Paris</td>
          </tr>
          <tr>
-            <td style="padding-left:10px; padding-right:10px">Droits</td>
+            <td class="about-item">Droits</td>
             <td><a target="_blank" href="http://archivesetmanuscrits.bnf.fr/ark:/12148/cc50522d">Consultable sur internet</a></td>
          </tr>
-      </table><br></br><h4 style="font-variant-caps: petite-caps;                 font-family: Georgia">Au sujet de l'auteur : Richard de Fournival</h4>
+      </table><br></br><h5 class="about">L'auteur : Richard de Fournival</h5>
       <table>
          <tr>
-            <td style="padding-left:10px; padding-right:10px">Naissance</td>
+            <td class="about-item">Naissance</td>
             <td>10 octobre 1201</td>
          </tr>
          <tr>
-            <td style="padding-left:10px; padding-right:10px">
+            <td class="about-item">
                Décès</td>
             <td>1er mars 1260</td>
          </tr>
          <tr>
-            <td style="padding-left:10px; padding-right:10px">Status</td>
+            <td class="about-item">Status</td>
             <td>Est un médecin, alchimiste, poète et érudit français.</td>
          </tr>
       </table><br></br></div><br></br><footer>
       <hr class="style-one"></hr>
       <div class="container">
-         <div class="row text-center justify-content-center ">
+         <div class="row text-center justify-content-center">
             <div>
                <h6><a class="navlinks" href="apropos.html">À propos</a></h6>
             </div>
