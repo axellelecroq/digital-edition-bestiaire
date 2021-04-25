@@ -34,6 +34,7 @@
         <xsl:text>apropos.html</xsl:text>
     </xsl:variable>
     
+    
     <xsl:template match="/">
         
         <xsl:result-document href="{$path-notice}" method="html" indent="yes">
@@ -213,7 +214,7 @@
             margin-right: 15px;
             }
            .titre-site{
-           margin: 10px 25px 5px 25px;
+           margin: 10px 25px 5px 10px;
            color: #5e7bb1;
            font-size: 20px;
            font-variant: small-caps;
@@ -224,6 +225,8 @@
            }
         </style>
         <nav class="navbar navbar-expand-lg nav-style" role="navigation">
+            <img src="../img/icon.jpg" style="width: 40px;
+                margin-left: 20px;"/>
             <div class="navbar-brand titre-site">
                 <xsl:value-of select="$titre"/>
             </div>
@@ -239,6 +242,7 @@
                         <a class="navlinks" href="{$path-index}">Textométrie</a>
                     </li>
                 </ul>
+                <span><a href="{$path-a-propos}"><img src="../img/info-circle.svg" alt="Guidelines" style="color: #5e7bb1"/></a></span>
             </div>
         </nav>
     </xsl:template>
@@ -248,11 +252,12 @@
         <footer>
             <hr class="style-one" />
             <div class="container">
-                <div class="row text-center justify-content-center">
+                <div class="text-center justify-content-center">
+                    <p>
+                        <h6><a class="navlinks" href="https://github.com/axellelecroq/">Axelle Lecroq · 2021</a></h6>
+                     </p>
                     <div>
-                        <h6>
-                            <a class="navlinks" href="{$path-a-propos}">À propos</a>
-                        </h6>
+                    <a href="http://www.chartes.psl.eu/"><img src="../img/ENC.png" width="100"/></a>
                     </div>
                 </div>
             </div>
@@ -378,8 +383,10 @@
                 celui de XML. </xsl:text>
                 </p>
                 <p><xsl:text>Ces travaux ont été produits par </xsl:text>
-                <a href="https://github.com/axellelecroq" target="_blank"><xsl:value-of select="//respStmt/persName"/></a>
+                    <a style="color: #BDA164;" href="https://github.com/axellelecroq" target="_blank"><xsl:value-of select="//respStmt/persName"/></a>
                 <xsl:text> au cours de l'année 2021.</xsl:text></p>
+                <p>Si vous souhaitez connaître les guidelines utilisées lors de l'encodage en XML-tei de cette édition, veuillez 
+                    cliquer sur ce <a style="color: #BDA164;" href="../documentation/le-bestiaire_odd.html">lien</a>.</p>
             <br/> 
         </div>
         <br/>
