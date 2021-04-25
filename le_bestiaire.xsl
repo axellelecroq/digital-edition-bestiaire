@@ -9,6 +9,10 @@
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
     <xsl:strip-space elements="*"/> <!-- supprime les espaces non voulus-->
     
+    <!-- 
+        Création des variables utiles 
+        notamment pour les chemins vers les templates et le titre
+    -->
     <xsl:variable name="path-transcriptions">
         <xsl:text>transcriptions.html</xsl:text>
     </xsl:variable>
@@ -36,9 +40,9 @@
         <xsl:text>accueil.html</xsl:text>
     </xsl:variable>
     
-    
+    <!-- TEMPLATES HTML -->
     <xsl:template match="/">
-        
+        <!-- ACCUEIL -->
         <xsl:result-document href="{$path-accueil}" method="html" indent="yes">
             <html>
                 <style>
@@ -58,7 +62,7 @@
             </html>
         </xsl:result-document>
         
-        
+        <!--  NOTICE -->
         <xsl:result-document href="{$path-notice}" method="html" indent="yes">
             <html>
                 <style>
@@ -78,6 +82,7 @@
             </html>
         </xsl:result-document>
         
+        <!-- TRANSCRIPTIONS (originale et normalisée) -->
         <xsl:result-document href="{$path-transcriptions}" method="html" indent="yes">
             <html>
                 <xsl:copy-of select="$head"/>
@@ -88,6 +93,7 @@
             </html>
         </xsl:result-document>
         
+        <!-- INDEX DES ANIMAUX -->
         <xsl:result-document href="{$path-index}" method="html" indent="yes">
             <html>
                 <style>
@@ -125,6 +131,7 @@
             </html>
         </xsl:result-document>  
         
+        <!-- INDEX PERSONNAGES -->
         <xsl:result-document href="{$path-index-personnages}" method="html" indent="yes">
             <html>
                 <style>
@@ -159,6 +166,7 @@
             </html>
         </xsl:result-document> 
         
+        <!-- INDEX MYTHES -->
         <xsl:result-document href="{$path-index-event}" method="html" indent="yes">
             <html>
                 <style>
@@ -193,6 +201,7 @@
             </html>
         </xsl:result-document> 
         
+        <!-- À PROPOS -->
         <xsl:result-document href="{$path-a-propos}" method="html" indent="yes">
             <html>
                 <style>
@@ -213,6 +222,7 @@
         </xsl:result-document>
     </xsl:template>
     
+    <!-- HEAD contenant notamment les métadonnées -->
     <xsl:variable name="head">
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -229,6 +239,7 @@
         </head>
     </xsl:variable>
     
+    <!-- BARRE DE NAVIGATION -->
     <xsl:template name="barreNavigation">
         <style>
             .navlinks{
@@ -270,7 +281,7 @@
         </nav>
     </xsl:template>
     
-    <!--Création d'un footer-->
+    <!-- FOOTER -->
     <xsl:variable name="footer">
         <footer>
             <hr class="style-one" />
@@ -293,7 +304,7 @@
     <xsl:template match="teiHeader" name="notice">
         <!-- 
             Les informations sur le manuscrit 
-            avec les données récupérés du teiHeader
+            avec les données récupérées du teiHeader
         -->
         <style>
             .about{
@@ -364,8 +375,8 @@
             <br/>
             <!-- 
             Les informations sur l'auteur 
-            avec les données récupérés du teiHeader
-        -->
+            avec les données récupérées du teiHeader
+            -->
             <h5 class="about">L'auteur : <xsl:value-of select="//msItem[3]//persName"/></h5>
             <table>
                 <tr>
@@ -415,6 +426,7 @@
         <br/>
     </xsl:template>
     
+    <!-- Création de la page d'accueil -->
     <xsl:template match="teiHeader" name="accueil">
         <style>
             .image-style{
@@ -431,7 +443,6 @@
             <img class="image-style" src="../img/paon.jpg"/>
         </div>
         <div style="margin: 50px 350px 0px 350px" align="justify">
-            
             <h4>Édition numérique de <i>Vie de Saints</i></h4>
             <p>Cette édition propose une transcription originale et normalisée. La mise en page permet
             de pouvoir comparer ces deux transcriptions. </p>
@@ -445,8 +456,9 @@
         <br/>
     </xsl:template>
 
-
-
+    <!-- Création de la page des transcriptions
+    avec une proposition de transcription originale
+    et une transcription normalisée -->
     <xsl:template match="//body/div" name="transcriptions">
         <!-- 
             On divise la présentation en deux colonnes qui contient
@@ -524,40 +536,17 @@
                 </span>
             </xsl:otherwise>
         </xsl:choose>
-        
-
-        
-        <!-- <xsl:for-each select="parent::p/">
-            <xsl:choose>
-                <xsl:when test="hi/@rend='color(red)'">
-                    <span style="color:red;">
-                        <xsl:value-of select="text()"/>
-                    </span>
-                </xsl:when>
-                    <xsl:otherwise>
-                        <span>
-                            <xsl:value-of select="text()"/>
-                        </span>
-                    </xsl:otherwise>
-                
-                
-                <xsl:when test="@rend='color(blue) case(caps)'">
-                    <span style="color:red;">
-                        <xsl:value-of select="text()"/>
-                    </span>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:for-each>-->
     </xsl:template>
     
     
     <!--     TEXTOMÉTRIE
-        Divisée en 3 parties : Animaux ; Personnes ; Mythes
+        Divisée en 3 parties : Animaux ; Personnages ; Mythes
     Le premier index (animaux) est commenté. Les étapes sont 
-    sensibellement les mêmes, bien que plus simple, pour les deux autres index.
-    J'ai numéro les étapes afin d'aider le lecteur à ce retrouver, le voculaire
+    sensiblement les mêmes, bien que plus simples, pour les deux index suivants.
+    Les étapes sont numértotées afin d'aider le lecteur à se retrouver, le vocabulaire
     pour chacune d'entre elles est à adapter en fonction de l'index dans lequel
     on se trouve. -->
+    <!-- ANIMAUX -->
     <xsl:template name="index">
         <style>
             .liste-titre{
@@ -581,7 +570,7 @@
                 <!-- Si l'animal possède une orthographe ancien-français de 
                 son nom alors celle-ci est récupérée.
                 Pour information, tous les animaux possèdent une orthographe
-                en ancien-français sauf les enfants des animaux eux-mêmes
+                en ancien-français sauf les petits des animaux
                 tels les hirondeaux ou les lionceaux qui sont tous deux appelés
                 faons dans le texte. -->
                 <xsl:if test="parent::nym/orth[2]">
@@ -600,14 +589,14 @@
                 </p>
                 <p>
                     <xsl:text>Occurences : </xsl:text>
-                 <!-- 4# On référence les occurences.
-                 Dans ce sens, on utilise la variable de l'id
+                 <!-- 4# On référence les occurences:
+                 dans ce sens, on utilise la variable de l'id
                  et on récupère le numéro de ligne qui sera envoyé
                  au le fichier de sortie.-->
                 <xsl:for-each select="ancestor::TEI//rs[@nymRef=concat('#', $idNym)]">
                     <xsl:value-of select="preceding-sibling::lb[1]/@n"/>
                     <!-- S'il ne s'agit pas de la dernière occurence,
-                    alors on joint un point-virgule pour plus de lisibilité. -->
+                    alors un point-virgule est juxtaposé pour plus de lisibilité. -->
                     <xsl:if test="position() != last()"> ; </xsl:if>
                 </xsl:for-each>
             </p>
@@ -617,6 +606,7 @@
         </div>
     </xsl:template>
     
+    <!-- PERSONNAGES -->
     <xsl:template name="index-personnages">
         <style>
             .liste-titre{
@@ -657,6 +647,7 @@
         </div>
     </xsl:template>
     
+    <!-- MYTHES -->
     <xsl:template name="index-event">
         <style>
             .identation{
