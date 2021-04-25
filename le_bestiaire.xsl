@@ -9,7 +9,6 @@
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
     <xsl:strip-space elements="*"/> <!-- supprime les espaces non voulus-->
     
-
     <xsl:variable name="path-transcriptions">
         <xsl:text>transcriptions.html</xsl:text>
     </xsl:variable>
@@ -33,9 +32,32 @@
     <xsl:variable name="path-a-propos">
         <xsl:text>apropos.html</xsl:text>
     </xsl:variable>
+    <xsl:variable name="path-accueil">
+        <xsl:text>accueil.html</xsl:text>
+    </xsl:variable>
     
     
     <xsl:template match="/">
+        
+        <xsl:result-document href="{$path-accueil}" method="html" indent="yes">
+            <html>
+                <style>
+                    h5{
+                    margin-bottom: 0.5rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    color: #5e7bb1;
+                    font-weight: 700;
+                    font-size: x-large;
+                    }
+                </style>
+                <xsl:copy-of select="$head"/>
+                <xsl:call-template name="barreNavigation"/>
+                <xsl:call-template name="accueil"/>
+                <xsl:copy-of select="$footer"/>
+            </html>
+        </xsl:result-document>
+        
         
         <xsl:result-document href="{$path-notice}" method="html" indent="yes">
             <html>
@@ -212,6 +234,7 @@
             .navlinks{
             color: #BDA164 ;
             margin-right: 15px;
+            font-size:16px;
             }
            .titre-site{
            margin: 10px 25px 5px 10px;
@@ -227,19 +250,19 @@
         <nav class="navbar navbar-expand-lg nav-style" role="navigation">
             <img src="../img/icon.jpg" style="width: 40px;
                 margin-left: 20px;"/>
-            <div class="navbar-brand titre-site">
-                <xsl:value-of select="$titre"/>
+            <div>
+                <a href="{$path-accueil}" class="navbar-brand titre-site"> <xsl:value-of select="$titre"/></a>
             </div>
             <div class="container-fluid">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="navlinks" href="{$path-notice}">Notice</a>
+                        <a class="navlinks navbar-brand" href="{$path-notice}">Notice</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navlinks" href="{$path-transcriptions}">Transcriptions</a>
+                        <a class="navlinks navbar-brand" href="{$path-transcriptions}">Transcriptions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navlinks" href="{$path-index}">Textométrie</a>
+                        <a class="navlinks navbar-brand" href="{$path-index}">Textométrie</a>
                     </li>
                 </ul>
                 <span><a href="{$path-a-propos}"><img src="../img/info-circle.svg" alt="Guidelines" style="color: #5e7bb1"/></a></span>
@@ -388,6 +411,36 @@
                 <p>Si vous souhaitez connaître les guidelines utilisées lors de l'encodage en XML-tei de cette édition, veuillez 
                     cliquer sur ce <a style="color: #BDA164;" href="../documentation/le-bestiaire_odd.html">lien</a>.</p>
             <br/> 
+        </div>
+        <br/>
+    </xsl:template>
+    
+    <xsl:template match="teiHeader" name="accueil">
+        <style>
+            .image-style{
+            height: 100;
+            margin-right: 10;
+            }
+        </style>
+        <div align="center">
+            <img class="image-style" src="../img/lion.jpg"/>
+            <img class="image-style" src="../img/castor.jpg"/>
+            <img class="image-style" src="../img/icon.jpg"/>
+            <img class="image-style" src="../img/hirondelle.jpg"/>
+            <img class="image-style" src="../img/vache.jpg"/>
+            <img class="image-style" src="../img/paon.jpg"/>
+        </div>
+        <div style="margin: 50px 350px 0px 350px" align="justify">
+            
+            <h4>Édition numérique de <i>Vie de Saints</i></h4>
+            <p>Cette édition propose une transcription originale et normalisée. La mise en page permet
+            de pouvoir comparer ces deux transcriptions. </p>
+            
+            <p>L'onglet notice apporte de plus amples informations concernant le manuscrit (Département des Manuscrits. Français 412)
+            et son auteur.</p>
+            <p>Une analyse textométrique est proposée également et indexe les différents animaux notifiés ainsi que les mythes et personnages
+            dont le texte fait référence.</p>
+            <p>Afin d'en savoir plus sur l'encodage et cette édition d'une manière générale, n'hésitez pas à vous renseigner en cliquant sur le <a href="{$path-a-propos}"><img src="../img/info-circle.svg"/></a>.</p>
         </div>
         <br/>
     </xsl:template>
