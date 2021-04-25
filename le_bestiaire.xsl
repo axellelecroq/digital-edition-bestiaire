@@ -48,12 +48,10 @@
                     font-size: x-large;
                     }
                 </style>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-                <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="https://cedricvb.be/wp-content/pages/xslt/catalog.css" />
-                
+                <xsl:copy-of select="$head"/>
                 <xsl:call-template name="barreNavigation"/>
                 <xsl:call-template name="notice"/>
+                <xsl:copy-of select="$footer"/>
             </html>
         </xsl:result-document>
         
@@ -64,13 +62,11 @@
                     font-family: Georgia, serif;
                     }
                 </style>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-                <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="https://cedricvb.be/wp-content/pages/xslt/catalog.css" />
-                
+                <xsl:copy-of select="$head"/>
                 <xsl:call-template name="barreNavigation"/>
                 <xsl:call-template name="transcriptions"/>
                 <br/>
+                <xsl:copy-of select="$footer"/>
             </html>
         </xsl:result-document>
         
@@ -86,10 +82,7 @@
                     font-size: x-large;
                     }
                 </style>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-                <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="https://cedricvb.be/wp-content/pages/xslt/catalog.css" />
-                
+                <xsl:copy-of select="$head"/>
                 <xsl:call-template name="barreNavigation"/>
                 
                 <div class="container">
@@ -107,6 +100,7 @@
                         <xsl:call-template name="index"/>
                     </div>
                 </div>
+                <xsl:copy-of select="$footer"/>
             </html>
         </xsl:result-document>  
         
@@ -122,10 +116,7 @@
                     font-size: x-large;
                     }
                 </style>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-                <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="https://cedricvb.be/wp-content/pages/xslt/catalog.css" />
-                
+                <xsl:copy-of select="$head"/>
                 <xsl:call-template name="barreNavigation"/>
                 
                 <div class="container">
@@ -143,6 +134,7 @@
                         <xsl:call-template name="index-personnages"/>
                     </div>
                 </div>
+                <xsl:copy-of select="$footer"/>
             </html>
         </xsl:result-document> 
         
@@ -158,10 +150,7 @@
                     font-size: x-large;
                     }
                 </style>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-                <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="https://cedricvb.be/wp-content/pages/xslt/catalog.css" />
-                
+                <xsl:copy-of select="$head"/>
                 <xsl:call-template name="barreNavigation"/>
                 
                 <div class="container">
@@ -179,6 +168,7 @@
                         <xsl:call-template name="index-event"/>
                     </div>
                 </div>
+                <xsl:copy-of select="$footer"/>
             </html>
         </xsl:result-document> 
         
@@ -194,49 +184,74 @@
                     font-size: x-large;
                     }
                 </style>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-                <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="https://cedricvb.be/wp-content/pages/xslt/catalog.css" />
-                
+                <xsl:copy-of select="$head"/>
                 <xsl:call-template name="barreNavigation"/>
                 <xsl:call-template name="a-propos"/>
+                <xsl:copy-of select="$footer"/>
             </html>
         </xsl:result-document>
-        
     </xsl:template>
+    
+    <xsl:variable name="head">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="stylesheet"
+                href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous"/>
+            <title>
+                <xsl:value-of select="$titre"/>
+            </title>
+        </head>
+    </xsl:variable>
     
     <xsl:template name="barreNavigation">
         <style>
             .navlinks{
             color: #BDA164 ;
+            margin-right: 15px;
             }
         </style>
-        <nav class="navbar navbar-dark bg-dark" role="navigation" style="background-color: #F2E5C9">
-            <div style="margin: 10px 0px 5px 25px;
+        <nav class="navbar navbar-expand-lg" role="navigation" style="background-color: #F2E5C9; margin-bottom: 50px;">
+            <div class="navbar-brand" style="margin: 10px 25px 5px 25px;
                 color: #5e7bb1;
-                font-family: Georgia, serif;
-                font-size: 20px;
+                font-family: ui-serif;
+                font-size: 30px;
                 font-variant: small-caps;">
                 <xsl:value-of select="$titre"/>
             </div>
-            <div class="container-fluid" style="margin-bottom:30px">
-                <ul class="navbar-nav mr-auto" style="margin-bottom: 10px;">
-                    <li class="navlinks" style="margin-right:25px">
+            <div class="container-fluid">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
                         <a class="navlinks" href="{$path-notice}">Notice</a>
                     </li>
-                    <li class="navlinks" style="margin-right:25px">
+                    <li class="nav-item">
                         <a class="navlinks" href="{$path-transcriptions}">Transcriptions</a>
                     </li>
-                    <li class="navlinks" style="margin-right:25px">
+                    <li class="nav-item">
                         <a class="navlinks" href="{$path-index}">Textométrie</a>
-                    </li>
-                    <li class="navlinks" style="margin-right:25px">
-                        <a class="navlinks" href="{$path-a-propos}">À propos</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </xsl:template>
+    
+    <!--Création d'un footer-->
+    <xsl:variable name="footer">
+        <footer>
+            <hr class="style-one" />
+            <div class="container">
+                <div class="row text-center justify-content-center ">
+                    <div>
+                        <h6>
+                            <a class="navlinks" href="{$path-a-propos}">À propos</a>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </footer>
+    </xsl:variable>
     
     <!-- Mise en page d'une notice, présentant une partie des
     données du teiHeader-->
@@ -346,7 +361,7 @@
                 <xsl:value-of select="//respStmt/resp"/>
                 <xsl:text>. L'édition numérique a été réalisée
                 dans le cadre du cours d'XSLT, cours dans la continuité du
-                cours de XML. </xsl:text>
+                celui de XML. </xsl:text>
                 </p>
                 <p><xsl:text>Ces travaux ont été produits par </xsl:text>
                 <a href="https://github.com/axellelecroq" target="_blank"><xsl:value-of select="//respStmt/persName"/></a>
