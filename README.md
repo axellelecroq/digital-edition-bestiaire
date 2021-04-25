@@ -2,7 +2,7 @@
 Ce projet consiste en l'édition en XML TEI d'une extrait du bestiaire d'amour de Richard de Fournival (ff.232v, 233r et 233v), rédigé en ancien français. Le manuscrit est conservé à la Bibliothèque nationale de France au sein du département des Manuscrits et disponible en [version numérisée](https://gallica.bnf.fr/ark:/12148/btv1b84259980).
 Cette édition numérique a été réalisée au sein de cours d'XML TEI et XSLT dispensés à l'École nationale des Chartes dans le cadre du M2 TNAH et a été produite par [Axelle Lecroq](https://github.com/axellelecroq) au cours de l'année 2021.
 
-[![plot](./img/presentation-site.png)](https://user-images.githubusercontent.com/60888306/114012668-ec17c900-9866-11eb-9589-ee42c555e45d.mp4)
+[![plot](img/presentation-site.png)]()
 
 ## Les étapes effectuées
 1. Transcription du texte en ancien français
