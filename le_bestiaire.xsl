@@ -244,14 +244,15 @@
         <style>
             .navlinks{
             color: #BDA164 ;
-            margin-right: 15px;
-            font-size:16px;
+            margin-right: 20px;
+            font-size:17px;
+            font-family: PTSerif;
             }
            .titre-site{
-           margin: 10px 25px 5px 10px;
+           margin: 0px 25px 0px 15px;
            color: #5e7bb1;
            font-size: 20px;
-           font-variant: small-caps;
+           font-family: PTSerif;
            }
            .nav-style{
            background-color: #F2E5C9;
@@ -262,7 +263,7 @@
             <img src="../img/icon.jpg" style="width: 40px;
                 margin-left: 20px;"/>
             <div>
-                <a href="{$path-accueil}" class="navbar-brand titre-site"> <xsl:value-of select="$titre"/></a>
+                <a href="{$path-accueil}" class="navbar-brand titre-site"> le bestiaire d'amour</a>
             </div>
             <div class="container-fluid">
                 <ul class="navbar-nav mr-auto">
@@ -288,7 +289,7 @@
             <div class="container">
                 <div class="text-center justify-content-center">
                     <p>
-                        <h6><a class="navlinks" href="https://github.com/axellelecroq/">Axelle Lecroq · 2021</a></h6>
+                        <a class="navbar-brand" style="font-size:12; color:darkgrey; font-family:monospace" href="https://github.com/axellelecroq/"><xsl:value-of select="//respStmt/persName"/> · 2021</a>
                      </p>
                     <div>
                     <a href="http://www.chartes.psl.eu/"><img src="../img/ENC.png" width="100"/></a>
@@ -443,15 +444,16 @@
             <img class="image-style" src="../img/paon.jpg"/>
         </div>
         <div style="margin: 50px 350px 0px 350px" align="justify">
-            <h4>Édition numérique de <i>Vie de Saints</i></h4>
-            <p>Cette édition propose une transcription originale et normalisée. La mise en page permet
-            de pouvoir comparer ces deux transcriptions. </p>
+            <h4>Édition numérique du <i>Bestiaire d'amour</i></h4>
+            <p>Ce site édite numériquement un extrait du <i>Bestiaire d'amour</i> de Richard de Fournival tiré du manuscrit <i>Vie de Saints</i> (Département des Manuscrits. Français 412).
+                Une transcription originale et normalisée sont proposées et la mise en page permet
+            de pouvoir les comparer. </p>
             
-            <p>L'onglet notice apporte de plus amples informations concernant le manuscrit (Département des Manuscrits. Français 412)
+            <p>L'onglet notice apporte de plus amples informations concernant le manuscrit
             et son auteur.</p>
             <p>Une analyse textométrique est proposée également et indexe les différents animaux notifiés ainsi que les mythes et personnages
             dont le texte fait référence.</p>
-            <p>Afin d'en savoir plus sur l'encodage et cette édition d'une manière générale, n'hésitez pas à vous renseigner en cliquant sur le <a href="{$path-a-propos}"><img src="../img/info-circle.svg"/></a>.</p>
+            <p>Afin d'en savoir plus sur l'encodage et cette édition d'une manière générale, n'hésitez pas à cliquer sur le <a href="{$path-a-propos}"><img src="../img/info-circle.svg"/></a>.</p>
         </div>
         <br/>
     </xsl:template>
