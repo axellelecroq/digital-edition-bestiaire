@@ -445,7 +445,9 @@
         </div>
         <div style="margin: 50px 350px 0px 350px" align="justify">
             <h4>Édition numérique du <i>Bestiaire d'amour</i></h4>
-            <p>Ce site édite numériquement un extrait du <i>Bestiaire d'amour</i> de Richard de Fournival tiré du manuscrit <i>Vie de Saints</i> (Département des Manuscrits. Français 412).
+            <p>Ce site édite numériquement un extrait du <i>Bestiaire d'amour</i> de
+                <xsl:value-of select="//msItem[3]//persName"/> tiré du manuscrit 
+                <i><xsl:value-of select="//title[@type='main']"/></i> (<xsl:value-of select="//repository"/>).
                 Une transcription originale et normalisée sont proposées et la mise en page permet
             de pouvoir les comparer. </p>
             
