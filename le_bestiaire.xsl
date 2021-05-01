@@ -263,6 +263,11 @@
             <img src="../img/icon.jpg" style="width: 40px;
                 margin-left: 20px;"/>
             <div>
+                <!-- Ici, je ne recupère par la variable titre car je préfère nommer le site
+                avec un titre plus cours et représentatif de ce qui représente l'édition. En effet,
+                il s'agit de l'édition d'un extrait du Bestiaire d'amour, tiré de "Vie de Saints".
+                Je trouve cela plus pertinent de nommer le site d'après le Bestiaire d'amour que
+                d'après le titre du recueil.-->
                 <a href="{$path-accueil}" class="navbar-brand titre-site"> le bestiaire d'amour</a>
             </div>
             <div class="container-fluid">
@@ -406,21 +411,20 @@
     </xsl:template>
 
 
-    <!-- Mise en page d'un à propos, présentant les données
-    du teiHeader au sujet de l'édition numérique-->
+    <!-- Mise en page d'un à propos, présentant en partie des données
+    tirées teiHeader -->
     <xsl:template match="teiHeader" name="a-propos">
             <!--  Les informations sur l'édition numérique -->
         <div style="margin: 50px 350px 0px 350px" align="justify">
             <p><xsl:text>L'</xsl:text>
                 <xsl:value-of select="//respStmt/resp"/>
-                <xsl:text>. L'édition numérique a été réalisée
-                dans le cadre du cours d'XSLT, cours dans la continuité du
-                celui de XML. </xsl:text>
+                <xsl:text>. La transformation de l'encodage vers HTML a été réalisée dans le cadre du cours d'XSLT qui se situe
+                    dans la continuité de celui d'XML-tei. </xsl:text>
                 </p>
                 <p><xsl:text>Ces travaux ont été produits par </xsl:text>
                     <a style="color: #BDA164;" href="https://github.com/axellelecroq" target="_blank"><xsl:value-of select="//respStmt/persName"/></a>
                 <xsl:text> au cours de l'année 2021.</xsl:text></p>
-                <p>Si vous souhaitez connaître les guidelines utilisées lors de l'encodage en XML-tei de cette édition, veuillez 
+                <p>Si vous souhaitez connaître les guidelines utilisées lors de l'encodage de cette édition, veuillez 
                     cliquer sur ce <a style="color: #BDA164;" href="../documentation/le-bestiaire_odd.html">lien</a>.</p>
             <br/> 
         </div>
@@ -435,6 +439,7 @@
             margin-right: 10;
             }
         </style>
+        <!-- Création de la bande d'images représentant les animaux du Bestiaire -->
         <div align="center">
             <img class="image-style" src="../img/lion.jpg"/>
             <img class="image-style" src="../img/castor.jpg"/>
@@ -443,6 +448,7 @@
             <img class="image-style" src="../img/vache.jpg"/>
             <img class="image-style" src="../img/paon.jpg"/>
         </div>
+        <!-- Création du texte de présentation du site et de l'édition -->
         <div style="margin: 50px 350px 0px 350px" align="justify">
             <h4>Édition numérique du <i>Bestiaire d'amour</i></h4>
             <p>Ce site édite numériquement un extrait du <i>Bestiaire d'amour</i> de
@@ -501,10 +507,13 @@
         </html>
     </xsl:template>
     
+    <!-- Récupération de la graphie originale 
+        dont les abbréviations médiévales -->
     <xsl:template match="choice" mode="orig">
         <xsl:value-of select=".//orig/text() | .//abbr/text()"/>
     </xsl:template>
     
+    <!-- Récupération de la graphie normalisée -->
     <xsl:template match="choice" mode="reg">
         <xsl:value-of select=".//reg/text() | .//expan"/>
     </xsl:template>
@@ -547,8 +556,8 @@
         Divisée en 3 parties : Animaux ; Personnages ; Mythes
     Le premier index (animaux) est commenté. Les étapes sont 
     sensiblement les mêmes, bien que plus simples, pour les deux index suivants.
-    Les étapes sont numértotées afin d'aider le lecteur à se retrouver, le vocabulaire
-    pour chacune d'entre elles est à adapter en fonction de l'index dans lequel
+    Les étapes sont numérotées afin d'aider le lecteur à se retrouver. Le vocabulaire
+    pour chacune des étapes est à adapter en fonction de l'index dans lequel
     on se trouve. -->
     <!-- ANIMAUX -->
     <xsl:template name="index">
@@ -562,7 +571,7 @@
             <h5 class="h5 liste-titre">Liste des animaux</h5>
         <div style="margin-left:50px">
         <xsl:for-each select="//orth[@xml:lang='fr']">
-            <!-- 1# Stockage de l'ixml:id dans une variable
+            <!-- 1# Stockage de l'xml:id dans une variable
             afin de pouvoir référencer les occurences-->
             <xsl:variable name="idNym">
                 <xsl:value-of select="parent::nym/@xml:id"/>
@@ -571,10 +580,10 @@
                 <!-- 2# On récupère la valeur actuelle qui est
                 l'orthographe en français des noms d'animaux.-->
                 <b><xsl:value-of select="."/></b>
-                <!-- Si l'animal possède une orthographe ancien-français de 
+                <!-- Si l'animal possède une orthographe en ancien français de 
                 son nom alors celle-ci est récupérée.
                 Pour information, tous les animaux possèdent une orthographe
-                en ancien-français sauf les petits des animaux
+                en ancien français sauf les petits des animaux
                 tels les hirondeaux ou les lionceaux qui sont tous deux appelés
                 faons dans le texte. -->
                 <xsl:if test="parent::nym/orth[2]">
@@ -583,10 +592,12 @@
                 </p>
             <div style="margin: 0px 450px 15px 50px">
             <p >
-                <!-- 3# On récupère la définition -->
+                <!-- 3# On récupère la définition de l'animal... -->
                 <xsl:value-of select="parent::nym/def"/>
             </p>
                 <p>
+                    <!-- ...et la note informative associée si 
+                    il y en a une. -->
                 <xsl:if test="parent::nym/p">
                     <xsl:value-of select="parent::nym/p"/>
                 </xsl:if>
@@ -596,7 +607,7 @@
                  <!-- 4# On référence les occurences:
                  dans ce sens, on utilise la variable de l'id
                  et on récupère le numéro de ligne qui sera envoyé
-                 au le fichier de sortie.-->
+                 au fichier de sortie.-->
                 <xsl:for-each select="ancestor::TEI//rs[@nymRef=concat('#', $idNym)]">
                     <xsl:value-of select="preceding-sibling::lb[1]/@n"/>
                     <!-- S'il ne s'agit pas de la dernière occurence,
