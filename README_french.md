@@ -15,3 +15,25 @@ Cette édition numérique a été réalisée au sein des cours d'XML-tei et d'XS
 4. Rédaction d'une documentation HTML afin de présenter les choix d'encodage et les diverses manières dont le projet pourrait être exploité.
 5. Visualisation du projet grâce à une transformation XSLT vers HTML
 
+## Structure du dépôt
+```
+digital-edition-bestiaire
+            ├── documentation
+            │       ├── le-bestiaire_odd.html
+            │       ├── le-bestiaire_odd.rng
+            │       └── le-bestiaire_odd.xml
+            ├── img/...
+            ├── templates
+            │       ├── accueil.html
+            │       ├── apropos.html
+            │       ├── index-event.html
+            │       ├── index-personnage.html
+            │       ├── index.html
+            │       ├── notice.html
+            │       └── transcription.ipynb
+            ├── .gitignore
+            ├── README.md
+            ├── README_french.md
+            ├── le-bestiaire.xml
+            └── le-bestiaire.xsl
+```
